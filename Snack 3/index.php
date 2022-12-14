@@ -5,7 +5,14 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
  */
 ?>
 <?php 
+  $num_array = [];
+      while (count($num_array) < 15) {
+        $random_number = rand(1, 100);
 
+        if (!in_array($random_number, $num_array)){
+          $num_array[] = $random_number;
+        } 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,18 +25,32 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 </head>
 <body>
   <ul>
-    <?php
-      $num_array = [];
-      for ($i = 0; $i < 15; $i++) {
-        $random_number = rand(1,100);
-
-        if (!in_array($random_number, $num_array)){
-          $num_array[] = $random_number;
-        }
-      ?>
-        <li><?php echo $num_array[$i] ?></li>
-    <?php
-    }?>
+    <?php for( $i = 0; $i < count($num_array); $i++) { ?>
+      <li><?= $num_array[$i] ?></li>
+    <?php } ?>
 	</ul>
+  <?php print_r($num_array[14]) ?>
 </body>
+<?php
+/*
+<?php
+  $num_array = [];
+  $i = 0;
+  while (count($num_array) < 15) {
+    
+    $random_number = rand(1, 100);
+
+    if (!in_array($random_number, $num_array)){
+      $num_array[] = $random_number;
+    }
+    
+  ?>
+    <pre>
+      <?php print_r($num_array[$i]); ?>
+    </pre>
+<?php
+  $i++;
+}?>
+*/
+?>
 </html>

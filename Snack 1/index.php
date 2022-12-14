@@ -65,14 +65,15 @@ $calendar = [
   <ul>
     <?php
       $calendar_length = count($calendar);
-      for ($i = 0; $i < $calendar_length; $i++) { ?>
-      <?php 
-      $team_home = $calendar[$i]['home']['name'];
-      $team_away = $calendar[$i]['away']['name'];
-      $score_home = $calendar[$i]['home']['score'];
-      $score_away = $calendar[$i]['away']['score'];
-    ?>
-      <li><?php echo "${team_home} - ${team_away} | ${score_home} - ${score_away}" ?></li>
+      for ($i = 0; $i < $calendar_length; $i++) { 
+
+        $team_home = $calendar[$i]['home']['name'];
+        $team_away = $calendar[$i]['away']['name'];
+        $score_home = $calendar[$i]['home']['score'];
+        $score_away = $calendar[$i]['away']['score'];
+        
+      ?>
+        <li><?php echo "${team_home} - ${team_away} | ${score_home}-${score_away}" ?></li>
     <?php
     }?>
 	</ul>
